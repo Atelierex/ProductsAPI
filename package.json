@@ -1,0 +1,24 @@
+{
+  "name": "ProductsAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/May-Take-A-Second/ProductsAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/May-Take-A-Second/ProductsAPI/issues"
+  },
+  "homepage": "https://github.com/May-Take-A-Second/ProductsAPI#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "pg": "^8.6.0"
+  }
+}
