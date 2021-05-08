@@ -19,6 +19,8 @@
   "homepage": "https://github.com/May-Take-A-Second/ProductsAPI#readme",
   "dependencies": {
     "csv-parser": "^3.0.0",
-    "pg": "^8.6.0"
+    "fast-csv": "^4.3.6",
+    "pg": "^8.6.0",
+    "readline": "^1.3.0"
   }
 }
