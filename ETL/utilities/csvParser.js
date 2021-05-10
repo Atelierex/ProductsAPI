@@ -20,8 +20,7 @@ const readCSV = (filename, callback, dataset) => {
       results.push(data);
     })
     .on('end', () => {
-      // callback(results, dataset);
-      console.log(results)
+      callback(results, dataset);
     });
 };
 
