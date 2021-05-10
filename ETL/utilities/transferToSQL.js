@@ -1,4 +1,4 @@
-const con = require('./mySQL.js');
+const con = require('../../mySQL/mySQL.js');
 
 const initialize = (jsonData, database) => {
   queryString = `INSERT INTO ${database} (${jsonData}) VALUES ?`;
