@@ -49,6 +49,19 @@ const related = (jsonData, database) => {
   return insert(queryString, parsedData);
 };
 
+const skus = (jsonData, database) => {
+  const {queryString, fieldLength, parsedData} = initialize(jsonData[0], database);
+  for (var i = 1; i < jsonData.length; i++) {
+    if (!jsonData[i].includes('null') && jsonData[i].length === fieldLength) {
+      parsedData.push(jsonData[i]);
+    }
+  }
+  for (var i = 0; i < parsedData.length; i += 100000) {
+    console.log('Calling on ', i);
+    insert(queryString, parsedData.slice(i, i + 100000 - 1 ));
+  }
+};
+
 const styles = (jsonData, database) => {
   const {queryString, fieldLength, parsedData} = initialize(jsonData[0], database);
   for (var i = 1; i < jsonData.length; i++) {
@@ -78,5 +91,6 @@ const photos = (jsonData, database) => {
 module.exports.features = features;
 module.exports.product = product;
 module.exports.related = related;
+module.exports.skus = skus;
 module.exports.styles = styles;
 module.exports.photos = photos;

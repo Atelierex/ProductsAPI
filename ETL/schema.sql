@@ -33,6 +33,16 @@ CREATE TABLE `related` (
   PRIMARY KEY (`id`)
 );
 
+DROP TABLE IF EXISTS `skus`;
+
+CREATE TABLE `skus` (
+  `id` INTEGER,
+  `styleId` INTEGER,
+  `size` TEXT,
+  `quantity` INTEGER,
+  PRIMARY KEY (`id`)
+);
+
 DROP TABLE IF EXISTS `styles`;
 
 CREATE TABLE `styles` (
