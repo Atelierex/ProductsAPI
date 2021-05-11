@@ -6,6 +6,7 @@ const controllers = require('./controllers/controllers.js');
 
 app.get('/products', controllers.productsHandler);
 app.get('/products/:product_id', controllers.productHandler);
+app.get('/products/:product_id/styles', controllers.stylesHandler);
 
 
 app.listen(port, () => {
