@@ -20,6 +20,7 @@
   "homepage": "https://github.com/May-Take-A-Second/ProductsAPI#readme",
   "dependencies": {
     "csv-parser": "^3.0.0",
+    "express": "^4.17.1",
     "fast-csv": "^4.3.6",
     "nodemon": "^2.0.7",
     "pg": "^8.6.0",
