@@ -24,6 +24,20 @@ const readCSV = (filename, callback, dataset) => {
     });
 };
 
+const parseCSV = (filename, callback, dataset) => {
+  let stream = fs.createReadStream(filename);
+  let results = [];
+  let csvStream = fastcsv
+    .parse()
+    .on('data', (data) => {
+      results.push(data);
+    })
+    .on('end', () => {
+      callback(results, dataset);
+    });
+  stream.pipe(csvStream);
+};
+
 const fixCSV = (filename, callback, dataset) => {
   var lineReader = readline.createInterface({
     input: require('fs').createReadStream(filename)
@@ -49,4 +63,5 @@ const fixCSV = (filename, callback, dataset) => {
 };
 
 module.exports.readCSV = readCSV;
+module.exports.parseCSV = parseCSV;
 module.exports.fixCSV = fixCSV;

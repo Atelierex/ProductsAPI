@@ -6,3 +6,4 @@ package-lock.json
 
 node_modules/
 originalData/
+mySQL/mySQL.js
