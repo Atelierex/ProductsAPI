@@ -25,7 +25,6 @@ CREATE TABLE `features` (
 );
 
 ALTER TABLE features ADD INDEX product_features (product_id);
-ALTER TABLE features DROP INDEX product_features;
 
 DROP TABLE IF EXISTS `related`;
 
@@ -37,7 +36,6 @@ CREATE TABLE `related` (
 );
 
 ALTER TABLE related ADD INDEX product_related (related_product_id);
-ALTER TABLE related DROP INDEX product_related;
 
 DROP TABLE IF EXISTS `skus`;
 
@@ -50,7 +48,6 @@ CREATE TABLE `skus` (
 );
 
 ALTER TABLE skus ADD INDEX style_skus (styleId);
-ALTER TABLE skus DROP INDEX style_skus;
 
 DROP TABLE IF EXISTS `styles`;
 
@@ -65,7 +62,6 @@ CREATE TABLE `styles` (
 );
 
 ALTER TABLE styles ADD INDEX product_styles (productId);
-ALTER TABLE styles DROP INDEX product_styles;
 
 DROP TABLE IF EXISTS `photos`;
 
@@ -78,4 +74,3 @@ CREATE TABLE `photos` (
 );
 
 ALTER TABLE photos ADD INDEX styles_photos (styleid);
-ALTER TABLE photos DROP INDEX styles_photos;
