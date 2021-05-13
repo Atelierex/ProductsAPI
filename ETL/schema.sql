@@ -35,7 +35,7 @@ CREATE TABLE `related` (
   PRIMARY KEY (`id`)
 );
 
-ALTER TABLE related ADD INDEX product_related (related_product_id);
+ALTER TABLE related ADD INDEX product_related (current_product_id);
 
 DROP TABLE IF EXISTS `skus`;
 

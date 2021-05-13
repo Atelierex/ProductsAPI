@@ -33,7 +33,7 @@ const productHandler = (req, res) => {
       res.end();
     } else {
       let key = Object.keys(productData[0])[0];
-      res.send(productData[0][key]);
+      res.send(JSON.parse(productData[0][key]));
     }
   });
 };
@@ -71,7 +71,21 @@ const stylesHandler = (req, res) => {
       console.log(err);
     } else {
       let key = Object.keys(productData[0])[0];
-      res.send(productData[0][key]);
+      res.send(JSON.parse(productData[0][key]));
+    }
+  });
+};
+
+const relatedHandler = (req, res) => {
+  let queryString = `SELECT JSON_ARRAYAGG(related_product_id) AS related FROM related where current_product_id = ${req.params.product_id}`;
+  // let queryString = `SELECT group_concat(related_product_id) FROM related where current_product_id = ${req.params.product_id}`;
+  con.query(queryString, (err, relatedData) => {
+    if (err) {
+      res.status(500);
+      res.end();
+      console.log(err);
+    } else {
+      res.send(JSON.parse(relatedData[0]['related']));
     }
   });
 };
@@ -79,3 +93,4 @@ const stylesHandler = (req, res) => {
 exports.productsHandler = productsHandler;
 exports.productHandler = productHandler;
 exports.stylesHandler = stylesHandler;
+exports.relatedHandler = relatedHandler;
