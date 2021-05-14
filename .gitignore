@@ -7,3 +7,5 @@ package-lock.json
 node_modules/
 originalData/
 mySQL/mySQL.js
+
+loadBalancer/serverConfig.js
